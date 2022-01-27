@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import kg.damir.telegram.R
 
 
-open class BaseFragment(val layout:Int) : Fragment() {
+open class BaseFragment(private val layout: Int) : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

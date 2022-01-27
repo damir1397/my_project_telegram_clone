@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Telegram" parent="MaterialDrawerTheme.Light">
+    <style name="Telegram" parent="MaterialDrawerTheme">
         <!-- ...and here we setting appcompat’s color theming attrs -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="popupTheme">@style/actionMenu</item>
+        <item name="android:colorBackground">@color/colorAccent</item>
 
         <!-- MaterialDrawer specific values -->
         <item name="material_drawer_background">@color/material_drawer_background</item>
@@ -31,6 +33,8 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginTop">10dp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:background">@drawable/ripple_effect</item>
     </style>
 
     <style name="smallText">
@@ -39,5 +43,25 @@
         <item name="android:layout_marginStart">@dimen/main_margin_16</item>
         <item name="android:textColor">@color/colorBlack</item>
         <item name="android:textSize">@dimen/normalText</item>
+    </style>
+
+    <style name="mainToolbar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
+    </style>
+
+    <style name="actionMenu" parent="Theme.AppCompat.Light">
+        <item name="background">@color/colorAccent</item>
+        <item name="actionMenuTextColor">@color/colorBlack</item>
+    </style>
+
+    <style name="settings_line_horizontal">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0.5dp</item>
+        <item name="android:layout_marginHorizontal">@dimen/main_margin_16</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:background">@color/colorGrey</item>
     </style>
 </resources>

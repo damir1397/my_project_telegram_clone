@@ -12,17 +12,18 @@
         android:layout_height="100dp"
         android:background="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/settings_user_photo"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
             android:layout_marginStart="16dp"
             android:src="@drawable/default_photo"
             app:civ_border_color="@color/md_white_1000"
-            app:civ_border_width="2dp"
+            app:civ_circle_background_color="@color/colorAccent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -32,20 +33,21 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
+            android:textSize="16sp"
             android:layout_marginTop="10dp"
+            android:text="Saadatbekov Damir"
             android:textColor="@color/md_white_1000"
             app:layout_constraintStart_toEndOf="@+id/settings_user_photo"
-            app:layout_constraintTop_toTopOf="@+id/settings_user_photo"
-            tools:text="Saadatbekov Damir" />
+            app:layout_constraintTop_toTopOf="@+id/settings_user_photo" />
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:text="в сети"
             android:textColor="@color/colorAccentDark"
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="@+id/textView"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
-            tools:text="в сети" />
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
@@ -54,7 +56,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/main_margin_16"
         android:layout_marginTop="16dp"
-        android:text="Aккаунт"
+        android:text="@string/account"
         android:textColor="@color/colorPrimary"
         android:textSize="14sp"
         android:textStyle="bold"
@@ -63,30 +65,110 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/settings_btn_change_number_phone"
+        style="@style/settingsButtons"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        style="@style/settingsButtons">
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
 
         <TextView
             android:id="@+id/settings_phone_number"
+            style="@style/smallText"
             android:text="+996 558 03 03 62"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            style="@style/smallText" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:id="@+id/setting_lebel_phone_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/main_margin_16"
-            android:text="Нажмите что изменить номер телефона"
+            android:text="@string/click_for_change_phone_number"
             android:textColor="@color/colorGrey"
             android:textSize="@dimen/smallText"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/settings_phone_number" />
 
+        <View
+            app:layout_constraintTop_toBottomOf="@+id/setting_lebel_phone_number"
+            style="@style/settings_line_horizontal"
+            tools:ignore="MissingConstraints" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/settings_btn_change_login"
+        style="@style/settingsButtons"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/settings_btn_change_number_phone">
+
+        <TextView
+            android:id="@+id/settings_login"
+            style="@style/smallText"
+            android:text="Damir_Saadatbekov"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/setting_lebel_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/main_margin_16"
+            android:text="@string/username"
+            android:textColor="@color/colorGrey"
+            android:textSize="@dimen/smallText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/settings_login" />
+
+        <View
+            style="@style/settings_line_horizontal"
+            tools:ignore="MissingConstraints"
+            app:layout_constraintTop_toBottomOf="@+id/setting_lebel_login" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/settings_btn_change_bio"
+        style="@style/settingsButtons"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/settings_btn_change_login">
+
+        <TextView
+            android:id="@+id/settings_bio"
+            style="@style/smallText"
+            android:text="@string/default_bio"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/setting_lebel_bio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/main_margin_16"
+            android:text="@string/settings_lebel_bio"
+            android:textColor="@color/colorGrey"
+            android:textSize="@dimen/smallText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/settings_bio" />
+
+        <View
+            style="@style/settings_line_horizontal"
+            tools:ignore="MissingConstraints"
+            app:layout_constraintTop_toBottomOf="@+id/setting_lebel_bio" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/settings_change_photo"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="@dimen/main_margin_16"
+        android:src="@drawable/ic_camera"
+        app:civ_border_color="@color/colorGrey"
+        app:civ_circle_background_color="@color/colorAccent"
+        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
